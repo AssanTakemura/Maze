@@ -59,12 +59,10 @@ class ViewController: UIViewController {
                     startView = creatView(x: x, y: y, width: cellWidth, height: cellHeight, offsetX: cellOffsetX, offsetY: cellOffsetY)
                     startView.backgroundColor = UIColor.green
                     view.addSubview(startView)
-                    
                 case 3:
                     goalView = creatView(x: x, y: y, width: cellWidth, height: cellHeight, offsetX: cellOffsetX, offsetY: cellOffsetY)
                     goalView.backgroundColor = UIColor.red
                     view.addSubview(goalView)
-                    
                 default:
                     break
                 }
@@ -148,6 +146,9 @@ class ViewController: UIViewController {
             (action: UIAlertAction!) -> Void in
             self.retry()
             })
+        
+        gameCheckAleat.addAction(retryAction)
+        self.present(gameCheckAleat, animated: true, completion: nil)
         
     }
     
